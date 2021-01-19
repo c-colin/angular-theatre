@@ -1,0 +1,39 @@
+<h1> {{$ctrl.movie.title}}</h1> 
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- Movie cover -->
+  	<div class="col-sm-4">
+  		<img class="cover-img" ng-src="{{$ctrl.movie.cover_url}}" alt="{{$ctrl.movie.title}}" width="100%"/>
+  	</div>
+
+    <!-- Movie details -->
+  	<div class="col-sm-8">
+      <ul class="categories">
+  			<li ng-repeat="categorie in $ctrl.categories">   {{categorie['name']}}{{$last ? '' : ',&nbsp'}}
+        </li>
+      </ul>
+
+  		<p> <em>Director</em> : {{$ctrl.movie.director}} </p>
+
+  		<p class="movie-description"> 
+  			{{$ctrl.movie.description}}
+  		</p>
+
+  		<ul class="actor-name unstyled-list" ng-if="$ctrl.actors.length>0">
+  			<em>With </em>
+  			<li  ng-repeat="actor in $ctrl.actors">
+  			  <strong ng-mouseover="$ctrl.setActorId(actor.id)" ng-mouseout="$ctrl.setActorId(-1)">{{actor['first_name']}} {{actor['last_name']}}</strong>{{$last ? '' : ',&nbsp'}}
+  			</li>
+  		</ul>
+
+      <!-- Description of the actor, displayed if the actor name is hovered -->
+  		<p ng-class="{selected: actor.id === $ctrl.actorHovered}" ng-repeat="actor in $ctrl.actors" class="actor-description">
+  			<img style="float:left;" ng-src="{{actor.picture_url}}" alt="{{actor.name}} picture"/>
+  			{{actor.biography}}
+  		</p>
+  	</div>
+  </div>
+
+

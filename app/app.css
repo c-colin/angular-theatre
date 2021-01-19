@@ -1,0 +1,77 @@
+body{
+	font-family: "Comic Sans MS";
+	--salmon:#CD5C5C;
+	padding: 20px
+}
+
+h1 {
+	padding: 20px;
+	color: var(--salmon);
+}
+
+h5 a{
+	color:black;
+}
+
+h5 a:hover{
+	color:salmon;
+	text-decoration: none;
+}
+
+/* View Movie list */
+.movie-list li{
+	display: inline-block;
+}
+
+.movie-list img{
+	max-width: 200px;
+}
+
+.movie-list a .card-img-top{
+	opacity: 0.8;
+}
+
+.movie-list a .card-img-top:hover{
+	opacity: 1;
+}
+
+/* View Movie description */
+.cover-img{
+	margin-bottom: 20px;
+}
+
+.movie-description{
+	color:grey;
+}
+
+.actor-name,.categories{
+	padding: 0;
+}
+
+.actor-name li, .categories li {
+	display:inline-block;
+
+}
+
+.actor-name strong{
+	color:var(--salmon);
+	font-weight: normal;
+}
+
+.actor-name strong:hover{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.actor-description{
+	opacity: 0;
+	position: absolute;
+	margin-top: 20px;
+}
+
+.actor-description img{
+	max-width: 70px;
+	margin-right: 10px;
+}
+
+

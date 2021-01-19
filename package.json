@@ -1,0 +1,33 @@
+{
+  "name": "angular-app",
+  "private": true,
+  "version": "0.0.0",
+  "description": "An AngularJS application",
+  "repository": "https://github.com/c-colin/angular-theatre.git",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.8.x",
+    "angular-animate": "1.8.x",
+    "angular-resource": "1.8.x",
+    "angular-route": "1.8.x",
+    "angular-touch": "1.6.1",
+    "bootstrap": "4.5.x",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.8.x",
+    "cpx": "^1.5.0",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "postinstall": "npm run copy-libs",
+    "update-deps": "npm update",
+    "postupdate-deps": "npm run copy-libs",
+    "copy-libs": "cpx \"node_modules/{angular,angular-*,bootstrap/dist}/**/*\" app/lib -C",
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1",
+    "pretest": "npm install",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update"
+  }
+}

@@ -1,0 +1,25 @@
+<h1> Movies at this theatre</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <ul class=" movie-list list-unstyled">
+      <div class="card-deck">
+        <li class=" col-sm-6 col-lg-4 col-xl-3 "ng-repeat="movie in $ctrl.movies">
+          <div class="card border-0">
+            <div class="card-body">
+               <h5 class="card-title">
+                  <a href="#!/movies/{{movie.id}}"> 
+                    {{movie.title}} 
+                  </a>
+                </h5>
+                <a href="#!/movies/{{movie.id}}">
+                  <img class="card-img-top" ng-src="{{movie.cover_url}}" alt="{{movie.title}}">
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </div>
+    </ul>
+  </div>
+</div>
